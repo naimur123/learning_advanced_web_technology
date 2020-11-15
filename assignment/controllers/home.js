@@ -22,4 +22,11 @@ router.get('/userlist', (req, res)=>{
 					 res.render('home/userlist', {users: results});
 		});
 	})
+router.get('/booklist', (req, res)=>{
+
+		userModel.getAll2(function(results)
+		{
+						 res.render('home/booklist', {users: results});
+			});
+		})
 module.exports = router; 

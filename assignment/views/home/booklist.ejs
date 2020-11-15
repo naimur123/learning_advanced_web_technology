@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book List</title>
+</head>
+<body>
+	<h1>Book List</h1>
+
+	<a href="/home">Back</a> | 
+	<a href="/logout">logout</a> 
+	<br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Book Name</td>
+			<td>Book Author</td>
+			<td>Book Adition</td>
+			<td>Catagory</td>
+            <td>Price</td>
+            <td>Description</td>
+          
+           
+		</tr>
+
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+                <td><%= std.ID %></td>
+				<td><%= std.bookname %></td>
+				<td><%= std.bookauthor %></td>
+				<td><%= std.bookadition %></td>
+                <td><%= std.catagories %></td>
+                <td><%= std.price %></td>
+                <td><%= std.description %></td>
+               
+				<td>
+					<a href="/user/edit/<%= std.ID %>">Edit</a>
+				</td>
+			</tr>
+		<%
+			}); 
+		%>
+
+	</table>
+
+</body>
+</html> 

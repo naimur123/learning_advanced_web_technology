@@ -12,11 +12,13 @@ const app				= express();
 
 
 const login				= require('./controllers/login');
+const logout			= require('./controllers/logout');
 const clogin			= require('./controllers/clogin');
 const select			= require('./controllers/select');
 const register			= require('./controllers/register');
 const home				= require('./controllers/home');
 const chome				= require('./controllers/chome');
+const user				= require('./controllers/user');
 
 
 
@@ -42,8 +44,8 @@ app.use(exSession({secret: 'secret value', saveUninitialized: true, resave: fals
 
 
 app.use('/home',home);
-//app.use('/user',user);
-//app.use('/logout', logout);
+app.use('/user',user);
+app.use('/logout', logout);
 app.use('/register', register);
 app.use('/clogin',clogin);
 app.use('/chome',chome);
