@@ -82,6 +82,18 @@ module.exports= {
 				callback(false);
 			}
 		});
+	},
+	getAll3: function(user,callback){
+		var sql = "select * from booklist ";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+	},
+	search: (search, callback) => {
+		var sql = "SELECT * FROM booklist WHERE bookname = '"+search+"' OR bookauthor = '"+search+"' OR bookadition = '"+search+"' OR catagories = '"+search+"' OR price = '"+search+"' OR description = '"+search+"' ";
+		db.getResults(sql, (results) => {
+			callback(results);
+		});
 	}
 	
 } 

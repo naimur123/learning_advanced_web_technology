@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=6.0">
+    <title>Search</title>
+   
+</head>
+<body>
+    <fieldset>
+        <legend>Search Book Name</legend>
+        <br>
+        <form>
+            <input type="text" name="key" id="key" placeholder="Search here">
+            <input type="button" id="ajaxSearch" value="Search">
+        </form>
+        <br>
+        <table border="1" id="myTable">
+            <tr>
+                <tr>
+			        <td>Book Name</td>
+			        <td>Book Author</td>
+			        <td>Book Adition</td>
+			        <td>Catagory</td>
+                    <td>Price</td>
+                    <td>Description</td>
+                    
+                </tr>
+            </tr>
+            
+        </table>
+    </fieldset>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#ajaxSearch").click((e) => {
+                e.preventDefault();
+                var search = $("#key").val();
+                $(this).closest('myTable').remove();
+                $.ajax({
+                    url: "home/searchbook",
+                    data: { search: search },
+                    method: "POST",
+                    contentType: "application/x-www-form-urlencoded",
+                    success: function(data){
+                        var results = data.results;
+                        $(".row").remove();
+                        for(var i=0; i<results.length; i++){
+                            $("#myTable").append(
+                                "<tr class='row'>"+
+                
+                                    "<td>"+results[i].bookname+"</td>"+
+                                    "<td>"+results[i].bookauthor+"</td>"+
+                                    "<td>"+results[i].bookadition+"</td>"+
+                                    "<td>"+results[i].catagories +"</td>"+
+                                    "<td>"+results[i].price+"</td>"+
+                                    "<td>"+results[i].description+"</td>"
+                                    
+                                +"</tr>"
+                            );
+                        }
+                        // $(".see").html(results[0].username);
+                        // $(".pee").html(results[0].salary);
+                        
+                    }, error: function(err) {
+                        alert(err);
+                    }
+                });
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>
+

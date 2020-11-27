@@ -5,10 +5,41 @@
 	
 </head>
 <body>
-	
+	<a class="nav-link" href="chome/searchbook">Search Book</a>
+	<table border="1">
+		<h3>Memories List</h3>
+		<tr>
+			
+			<td>Book Name</td>
+			<td>Book Author</td>
+			<td>Book Adition</td>
+			
+            <td>Price</td>
+            <td>Description</td>
+          
+           
+		</tr>
 
-	<a href="/user/addjob">Add New Job</a> 
-	
+		<% 
+			users.forEach( function(std){ %>
+			<tr>
+               
+				<td><%= std.bookname %></td>
+				<td><%= std.bookauthor %></td>
+				<td><%= std.bookadition %></td>
+                <td><%= std.price %></td>
+                <td><%= std.description %></td>
+               
+				<td>
+					<a href="/user/addtocart/<%= std.bookname %>">Add to Cart</a>
+				</td>
+			</tr>
+		<%
+			}); 
+		%>
+
+	</table>
+
 	
 
 </body>

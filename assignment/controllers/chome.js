@@ -12,9 +12,24 @@ router.get('*',  (req, res, next)=>{
 		next();			
 	}		
 });
-router.get('/', (req, res)=>{	
-	res.render('home/chome');	
+router.get('/', (req, res)=>{
+	var user=req.cookies['username']
+	userModel.getAll3(user,function(results)
+	{
+	   res.render('home/chome', {users: results});
+	});	
 })
+router.get('/searchbook', (req, res) => {
+    res.render('home/searchbook');
+});
+
+router.post('/searchbook', (req, res) => {
+    userModel.search(req.body.search, (result) => {
+        res.json({
+            results: result
+        });
+    });
+});
 
 
 
