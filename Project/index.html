@@ -1,0 +1,210 @@
+
+<?php
+if(isset($_POST['submit_button'])){
+    session_start();
+    $sighUp= $_POST['member'];
+
+    
+	if ($signUp=="SignUp")
+    {
+        header("location: signup.php");
+        
+    }
+    else {
+          header("location: signIn.php");
+	}
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["member"].value;
+  if (x == "") {
+    alert("SignUp or SignIn must be select");
+    return false;
+  }
+}
+</script>
+<body>
+      <div class="container">
+      <h1>Online Shopping</h1>
+      <nav id="links">
+        <ul>
+        <li><a href="#s1"><i class="fa fa-phone" ></i>Contact Us</a></li>
+        <li><a href="#s2"><i class="fa fa-mobile" ></i>Brands</a></li>
+        <li><a href="#s3"><i class="fa fa-user" ></i>Developers</a></li>
+        <li><a href="#s4"><i class="fa fa-info-circle"></i>About Us</a></li>
+        <li><a href="#s6"><i class="fa fa-shopping-bag"></i>Features</a></li>
+        <li><a href="#s5"><i class="fa fa-home"></i>Home</a></li>
+        
+      </ul> 
+    </nav>
+     </div>
+    <div class="main">
+      <section id="view-me">
+          <h2>ALL THE BRAND NEW PRODUCTS</h2>
+      </section>
+    </div>
+    <div class="main1">
+      <section id="view-me1">
+         <span></span> 
+      </section>
+    </div>
+    <div class="button-click">
+        <form name="myForm" method="POST" onsubmit="return validateForm()" action="index.php">
+           
+        <input type="radio" name="member" value="SignUp">
+        <label for="SignUp">SignUp</label>
+        <input type="radio" name="member" value="SignIn">
+        <label for="SignUp">SigIn</label>
+
+        <br>
+        <input type="submit" name="submit_button"  value="Select" required>
+       
+        
+        </form>
+    </div>
+    <div class="all-info">
+        <section id="s5">
+         <div class="wlc">
+          <h4><i class="fa fa-circle-o-notch"></i> Welcome To Online Shopping <i class="fa fa-circle-o-notch"></i></h4>
+         </div>
+        </section>
+        <section id="s6">
+          <div class="features">
+                  <h2 class="underLine-f">Top Features</h2>
+                  <div class="s-f">
+                    <div class="col-10">
+                    <img src="images/21.jpg">
+                    <h4>Red T-Shirt</h4>
+                    </div>
+                    <div class="col-11">
+                    <img src="images/22.jpg">
+                    <h4>K-21 Watch</h4>
+                    </div>
+                    <div class="col-12">
+                    <img src="images/23.jpg">
+                    <h4>Addidas A-41</h4>
+                    </div>
+                    <div class="col-13">
+                    <img src="images/24.png">
+                    <h4>Addidas A-41</h4>
+                    </div>
+                 </div>
+
+          </div>
+         </section>
+        <section id="s4">
+          <div class="aboutUs">
+                  <h2 class="underLine">ABOUT US</h2>
+                  <p><strong>This is an Online Shopping place.</strong>
+                    Here You Can Buy Everything In A Cheaper price.
+                  Also We Suggest The Best Products For You.
+                  We have gathered the brightest minds of Bangladesh and given them the platform to perform to their fullest extent. All the data-mining and optimization has been done in-house and no outsourcing from any organization has taken place.<strong> We are utilizing 100% Bangladeshi personnel and resources and keeping the flow of cash within our borders.</strong>
+                  <br>
+                  <strong>It is a platform where people can purchase all kinds of goods from a single website.</strong> From a pencil to a book to a dress to a cell phone to cars to lands,everything is available in this website. It is built by a team of developers who have the sharpest minds in this sector and they are dedicated to only Droplet Limited. We hire no outsourcing outlets and that ensures the security of all our users.
+                </p>
+
+          </div>
+         </section>
+         <section id="s3">
+          <div class="devlopers">
+                  <h2 class="underLine-1">Site Developers</h2>
+                  <div class="serial">
+                    <div class="col-1">
+                    <img src="images/8.jpg">
+                    <h4>Steve Robertson</h4>
+                    </div>
+                    <div class="col-2">
+                    <img src="images/9.jpg">
+                    <h4>Hossain Md</h4>
+                    </div>
+                    <div class="col-3">
+                    <img src="images/10.jpg">
+                    <h4>Criss Moris</h4>
+                    </div>
+                    <div class="col-4">
+                    <img src="images/11.jpg">
+                    <h4>Shane Watson</h4>
+                    </div>
+                 </div>
+
+          </div>
+         </section>
+         <section id="s2">
+          <div class="brands">
+                  <h2 class="underLine-2">TOP BRANDS</h2>
+                  <div class="col-5">
+                    <img src="images/12.png">
+                    <img src="images/13.png">
+                    <img src="images/14.png">
+                    <img src="images/15.png">
+                    <img src="images/16.png">
+                    <img src="images/17.png">
+                    <img src="images/20.png">
+                    <img src="images/19.jpg">
+                    <img src="images/18.jpeg">
+                    
+                  </div>
+
+          </div>
+         </section>
+         <section id="s1">
+          <div class="contactUs">
+                  <h2 class="underLine-3">Contact Us</h2>
+                  
+                  <div class="col-6">
+                  <p>If you have any question or facing any problem please
+                    contact with us.<strong>Our customer care is working for 24/7.</strong></P>
+                   <p> For more details,See the contact information below.<p>
+                  
+                    
+                  </div>
+
+                  <div class="col-7">
+                    <h4>Our Location</h4>
+                    <p>21,Kamal Ataturk Avenue,Banani,Dhaka.
+                    <br>Zero points,Chittagong.
+                    <br>5200
+                    </p>
+
+                  </div>
+                  <div class="col-8">
+                    <h4>Feedbacks</h4>
+                    <p><i class="fa fa-phone-square" ></i>Call: <a href="mobile">   +917-283-417 </a></p>
+                    <p><i class="fa fa-envelope" ></i>Email: Onlineshop@gmail.com</p>
+                   
+                  </div>
+                  <div class="col-9">
+                    <h4>Follow-Us-On</h4>
+                    <p><i class="fa fa-facebook-official" ></i>Facebook: facebook.com/onlineshopping</p>
+                    <p><i class="fa fa-twitter-square" ></i>Twitter: @onlineshoppingBD</p>
+                    <p><i class="fa fa-instagram" ></i>Instagram: @onlineshoppingBD.1</p>
+
+                   
+                  </div>
+
+                
+
+          </div>
+         </section>
+</div>
+  
+
+         
+   
+    
+    
+    
+    
+</body>
+</html>
